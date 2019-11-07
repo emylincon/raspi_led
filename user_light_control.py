@@ -8,11 +8,11 @@ GPIO.setup(17, GPIO.OUT)
 os.system('clear')
 custom_fig = Figlet(font='graffiti')
 print(custom_fig.renderText('Welcome To LSBU'))
-print("********************************")
-print("*                              *")
-print("*      Enter Off Or On         *")
-print("*                              *")
-print("********************************")
+print("/*****************************************************\\")
+print("*                                                     *")
+print("*      Enter Off Or On to Control the Led Light       *")
+print("*                                                     *")
+print("\*****************************************************/")
 
 while True:
     try:
