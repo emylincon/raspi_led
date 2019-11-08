@@ -1,18 +1,33 @@
 import RPi.GPIO as GPIO
 import os
 from pyfiglet import Figlet
+import sys
+import time
+from termcolor import colored, cprint
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.OUT)
 
+
+def delay_print(s):
+    for c in s:
+        sys.stdout.write(c)
+        sys.stdout.flush()
+        time.sleep(0.15)
+
+
+os.system('clear')
+print('>> starting...')
+delay_print("<======================================================")
+
 os.system('clear')
 custom_fig = Figlet(font='graffiti')
-print(custom_fig.renderText('Welcome To LSBU'))
-print("/*****************************************************\\")
-print("*                                                     *")
-print("*      Enter Off Or On to Control the Led Light       *")
-print("*                                                     *")
-print("\*****************************************************/\n")
+cprint(custom_fig.renderText('welcome to LSBU'), 'yellow')
+cprint("/*****************************************************\\", 'yellow')
+cprint("*                                                     *", 'yellow')
+cprint("*      Enter Off Or On to Control the Led Light       *", 'red')
+cprint("*                                                     *", 'yellow')
+cprint("\*****************************************************/\n", 'yellow')
 
 while True:
     try:
