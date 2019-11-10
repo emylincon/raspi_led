@@ -26,6 +26,14 @@ def light():
     print('       \/')
 
 
+def _light():
+    bulb = ['\n    _------_', '  -~        ~-', ' -     _      -', '-      |>      -', '-      |<      -',
+            ' -     |>     -', '  -    ||    -', '   -   ||   -', '    -__||__-', '    |______|', '    <______>',
+            '    <______>', '       \/']
+    for i in bulb:
+        print(i)
+
+
 def delay_print(s):
     for c in s:
         sys.stdout.write(c)
@@ -52,7 +60,7 @@ def display_text():
 display_text()
 while True:
     GPIO.output(17, True)
-    light()
+    _light()
     time.sleep(2)
     GPIO.output(17, False)
     os.system('clear')
